@@ -58,7 +58,7 @@ router.get('/:id', (req, res) => {
   Users.getById(id)
     .then(user => {
       res.status(200).json({
-        message: "here is the user by id",
+        message: `here is the user by the id of: ${id}.`,
         userById: user
       })
     })
@@ -101,7 +101,7 @@ router.put('/:id', (req, res) => {
   // do your magic!
   const id = req.params.id
   const body = req.body
-  user.update(id, body)
+  Users.update(id, body)
     .then(user => {
       res.status(200).json({
         message: "user update",
